@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-1.7.js"></script>
+  <script>
+    var xml = '';
+    xml += '<friends>';
+    xml += '	<friend>';
+    xml += '		<name>¿¬ÇÏÁø</name>';
+    xml += '		<language>Ruby</language>';
+    xml += '	</friend>';
+    xml += '	<friend>';
+    xml += '		<name>À±¸í¿ù</name>';
+    xml += '		<language>Basic</language>';
+    xml += '	</friend>';
+    xml += '	<friend>';
+    xml += '		<name>À±ÇÏ¸°</name>';
+    xml += '		<language>C#</language>';
+    xml += '	</friend>';
+    xml += '</friends>';
+
+    $(document).ready(function () {
+	var xmlDoc = $.parseXML(xml);
+	$(xmlDoc).find('friend').each(function (index) {
+		var output = '';
+		output += '<div>';
+		output += '	<h1>' + $(this).find('name').text() + '</h1>';
+		output += '	<p>' + $(this).find('language').text() + '</p>';
+		output += '</div>';
+
+		document.body.innerHTML += output;
+	});
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
