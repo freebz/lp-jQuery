@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    * { margin:0px; padding:0px }
+    div {
+	margin:5px; padding:3px;
+
+	border-width:3px;
+	border-style:solid;
+	border-color:Black;
+	border-radius:10px;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.7.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+	$('h1').click(function () {
+	    $(this).html(function (index, html) {
+		return html + '¡Ú';
+	    });
+	});
+
+	setInterval(function () {
+	    $('h1').last().trigger('click');
+	    //$('h1').last().click();
+	}, 1000);
+    });
+  </script>
+</head>
+<body>
+  <h1>Start: </h1>
+  <h1>Start: </h1>
+</body>
+</html>
