@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    div {
+	background-color:Orange;
+	width:150px; height:150px;
+	position:relative;
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-1.7.js"></script>
+  <script src="jquery-ui-1.10.2.custom.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+	$('button').click(function () {
+	    var easing = $('select > option:selected').html();
+	    $('div').animate({
+		left: '400'
+	    }, 2000, easing).animate({
+		left: '0'
+	    }, 1000, easing);
+	});
+    });
+  </script>
+</head>
+<body>
+  <select>
+    <option>linear</option>
+    <option>swing</option>
+    <option>easeInQuad</option>
+
+  </select>
+  <button>MOVE</button>
+  <div></div>
+</body>
+</html>
